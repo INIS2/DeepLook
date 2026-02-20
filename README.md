@@ -1,2 +1,2 @@
-# MegaLook-CIIP_Guide_Result_Dashboard-
+# MegaLook-CIIP_Guide_Result_Dashboard
 MegaLook(CIIP_Guide_Result_Dashboard)
