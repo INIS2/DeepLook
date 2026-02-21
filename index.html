@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIIP 결과 대시보드</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-badge">CIIP</div>
+        <div class="brand-title">
+          <div class="title">취약점 점검 결과 뷰어</div>
+          <div class="subtitle">Content + Result 연결형 대시보드</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="segmented">
+          <button class="seg-btn active" data-view="dashboard">대시보드</button>
+          <button class="seg-btn" data-view="project">프로젝트</button>
+        </div>
+        <div class="upload-wrap">
+          <label for="resultFiles">Result 폴더</label>
+          <input id="resultFiles" type="file" accept=".csv" multiple webkitdirectory />
+        </div>
+        <div class="info-tip" aria-label="안내" tabindex="0">
+          <span class="info-icon">i</span>
+          <div class="info-panel">데이터는 브라우저에서만 사용되며 서버로 전송되지 않습니다.</div>
+        </div>
+        <div class="select-wrap">
+          <label for="projectSelect">프로젝트</label>
+          <select id="projectSelect"></select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="dashboard" class="view">
+        <div id="dashboardEmpty" class="empty-state hidden">
+          <div class="empty-title">Result CSV를 선택하세요</div>
+          <div class="empty-sub">상단에서 결과 파일을 업로드하면 대시보드가 채워집니다.</div>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">전체 프로젝트</div>
+            <div class="kpi-value" id="kpiProjects">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">전체 항목</div>
+            <div class="kpi-value" id="kpiItems">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">미흡 항목</div>
+            <div class="kpi-value danger" id="kpiWeak">-</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">양호 비율</div>
+            <div class="kpi-value" id="kpiGoodRate">-</div>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="panel">
+            <div class="panel-title">전체 상태 분포</div>
+            <div class="donut-wrap">
+              <svg id="statusDonut" viewBox="0 0 120 120"></svg>
+              <div class="donut-center">
+                <div class="donut-label">TOTAL</div>
+                <div class="donut-value" id="donutTotal">-</div>
+              </div>
+            </div>
+            <div class="legend" id="statusLegend"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">미흡 Top 5</div>
+            <div class="bar-list" id="topWeakList"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">최근 결과 요약</div>
+            <div class="table" id="recentTable"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project" class="view hidden">
+        <div id="projectEmpty" class="empty-state hidden">
+          <div class="empty-title">프로젝트가 없습니다</div>
+          <div class="empty-sub">Result CSV를 업로드하면 체크리스트가 표시됩니다.</div>
+        </div>
+        <div class="project-header">
+          <div>
+            <div class="section-title" id="projectTitle">프로젝트</div>
+            <div class="section-sub" id="projectDesc">프로젝트별 점검 결과와 가이드 연결</div>
+          </div>
+          <div class="filters">
+            <input id="searchInput" placeholder="항목 검색" />
+            <select id="statusFilter">
+              <option value="all">전체 상태</option>
+              <option value="미흡">미흡</option>
+              <option value="양호">양호</option>
+              <option value="수동점검">수동점검</option>
+              <option value="-">미확인</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="list-panel">
+            <div class="list-head">
+              <div class="list-title">점검 체크리스트</div>
+              <div class="list-meta" id="listMeta">-</div>
+            </div>
+            <div class="checklist" id="checklist"></div>
+          </div>
+
+          <div class="detail-panel">
+            <div class="detail-head">
+              <div class="detail-title" id="detailTitle">항목을 선택하세요</div>
+              <div class="detail-badges" id="detailBadges"></div>
+            </div>
+
+            <div class="detail-tabs">
+              <button class="tab-btn active" data-tab="overview">개요</button>
+              <button class="tab-btn" data-tab="criteria">판단</button>
+              <button class="tab-btn" data-tab="action">조치</button>
+              <button class="tab-btn" data-tab="reference">참고</button>
+            </div>
+
+            <div class="detail-body" id="detailBody"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Data: Content/CIIP Checklist.csv + Result/*.csv</div>
+      <div class="footnote">로컬에서 열 때 데이터가 안 보이면 `python3 -m http.server`로 실행하세요.</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

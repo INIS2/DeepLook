@@ -1,65 +1,65 @@
-´ëºÐ·ù,ÁßºÐ·ù,Á¡°ËÇ×¸ñ,Áß¿äµµ,Ç×¸ñÄÚµå,Á¡°Ë¿©ºÎ,Á¡°Ë°á°ú,ºñ°í/ÄÚ¸àÆ®,°á°ú´ýÇÁ
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,Administrator °èÁ¤ ÀÌ¸§ º¯°æ µî º¸¾È¼º °­È­,»ó,W-01,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,Guest °èÁ¤ ºñÈ°¼ºÈ­,»ó,W-02,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,ºÒÇÊ¿äÇÑ °èÁ¤ Á¦°Å,»ó,W-03,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,°èÁ¤ Àá±Ý ÀÓ°è°ª ¼³Á¤,»ó,W-04,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,ÇØµ¶ °¡´ÉÇÑ ¾ÏÈ£È­¸¦ »ç¿ëÇÏ¿© ¾ÏÈ£ ÀúÀå ÇØÁ¦,»ó,W-05,N,-,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,°ü¸®ÀÚ ±×·ì¿¡ ÃÖ¼ÒÇÑÀÇ »ç¿ëÀÚ Æ÷ÇÔ,»ó,W-06,N,-,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,Everyone »ç¿ë ±ÇÇÑÀ» ÀÍ¸í »ç¿ëÀÚ¿¡ Àû¿ë,Áß,W-07,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,°èÁ¤ Àá±Ý ±â°£ ¼³Á¤,Áß,W-08,Y,¹ÌÈí,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,ºñ¹Ð¹øÈ£ °ü¸® Á¤Ã¥ ¼³Á¤,»ó,W-09,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,¸¶Áö¸· »ç¿ëÀÚ ÀÌ¸§ Ç¥½Ã ¾È ÇÔ,Áß,W-10,Y,¹ÌÈí,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,·ÎÄÃ ·Î±×¿Â Çã¿ë,Áß,W-11,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,ÀÍ¸í SID/ÀÌ¸§ º¯È¯ Çã¿ë ÇØÁ¦,Áß,W-12,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,ÄÜ¼Ö ·Î±×¿Â ½Ã ·ÎÄÃ °èÁ¤¿¡¼­ ºó ¾ÏÈ£ »ç¿ë Á¦ÇÑ,Áß,W-13,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,01. °èÁ¤°ü¸®,¿ø°ÝÅÍ¹Ì³Î Á¢¼Ó °¡´ÉÇÑ »ç¿ëÀÚ ±×·ì Á¦ÇÑ,Áß,W-14,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,»ç¿ëÀÚ °³ÀÎÅ° »ç¿ë ½Ã ¾ÏÈ£ ÀÔ·Â,»ó,W-15,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,°øÀ¯ ±ÇÇÑ ¹× »ç¿ëÀÚ ±×·ì ¼³Á¤,»ó,W-16,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ÇÏµåµð½ºÅ© ±âº» °øÀ¯ Á¦°Å,»ó,W-17,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ºÒÇÊ¿äÇÑ ¼­ºñ½º Á¦°Å,»ó,W-18,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ºÒÇÊ¿äÇÑ IIS ¼­ºñ½º ±¸µ¿ Á¡°Ë,»ó,W-19,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,NetBIOS ¹ÙÀÎµù ¼­ºñ½º ±¸µ¿ Á¡°Ë,»ó,W-20,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,¾ÏÈ£È­µÇÁö ¾Ê´Â FTP ¼­ºñ½º ºñÈ°¼ºÈ­,»ó,W-21,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,FTP µð·ºÅä¸® Á¢±Ù±ÇÇÑ ¼³Á¤,»ó,W-22,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,°øÀ¯ ¼­ºñ½º¿¡ ´ëÇÑ ÀÍ¸í Á¢±Ù Á¦ÇÑ ¼³Á¤,»ó,W-23,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,FTP Á¢±Ù Á¦¾î ¼³Á¤,»ó,W-24,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,DNS Zone Transfer ¼³Á¤,»ó,W-25,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,RDS(Remote Data Services)Á¦°Å,»ó,W-26,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ÃÖ½Å Windows OS Build ¹öÀü Àû¿ë,»ó,W-27,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ÅÍ¹Ì³Î ¼­ºñ½º ¾ÏÈ£È­ ¼öÁØ ¼³Á¤,Áß,W-28,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ºÒÇÊ¿äÇÑ SNMP ¼­ºñ½º ±¸µ¿ Á¡°Ë,Áß,W-29,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,SNMP Community String º¹Àâ¼º ¼³Á¤,Áß,W-30,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,SNMP Access Control ¼³Á¤,Áß,W-31,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,DNS ¼­ºñ½º ±¸µ¿ Á¡°Ë,Áß,W-32,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,HTTP/FTP/SMTP ¹è³Ê Â÷´Ü,ÇÏ,W-33,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,Telnet ¼­ºñ½º ºñÈ°¼ºÈ­,Áß,W-34,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,ºÒÇÊ¿äÇÑ ODBC/OLE-DB µ¥ÀÌÅÍ ¼Ò½º¿Í µå¶óÀÌºê Á¦°Å,Áß,W-35,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,¿ø°ÝÅÍ¹Ì³Î Á¢¼Ó Å¸ÀÓ¾Æ¿ô ¼³Á¤,Áß,W-36,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,02. ¼­ºñ½º°ü¸®,¿¹¾àµÈ ÀÛ¾÷¿¡ ÀÇ½É½º·¯¿î ¸í·ÉÀÌ µî·ÏµÇ¾î ÀÖ´ÂÁö Á¡°Ë,Áß,W-37,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,03. ÆÐÄ¡°ü¸®,ÁÖ±âÀû º¸¾È ÆÐÄ¡ ¹× º¥´õ ±Ç°í»çÇ× Àû¿ë,»ó,W-38,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,03. ÆÐÄ¡°ü¸®,¹é½Å ÇÁ·Î±×·¥ ¾÷µ¥ÀÌÆ®,»ó,W-39,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,04. ·Î±×°ü¸®,Á¤Ã¥¿¡ µû¸¥ ½Ã½ºÅÛ ·Î±ë ¼³Á¤,Áß,W-40,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,04. ·Î±×°ü¸®,NTP ¹× ½Ã°¢ µ¿±âÈ­ ¼³Á¤,Áß,W-41,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,04. ·Î±×°ü¸®,ÀÌº¥Æ® ·Î±× °ü¸® ¼³Á¤,ÇÏ,W-42,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,04. ·Î±×°ü¸®,ÀÌº¥Æ® ·Î±× ÆÄÀÏ Á¢±Ù ÅëÁ¦ ¼³Á¤,Áß,W-43,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,¿ø°ÝÀ¸·Î ¾×¼¼½ºÇÒ ¼ö ÀÖ´Â ·¹Áö½ºÆ®¸® °æ·Î,»ó,W-44,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,¹é½Å ÇÁ·Î±×·¥ ¼³Ä¡,»ó,W-45,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,SAM ÆÄÀÏ Á¢±Ù ÅëÁ¦ ¼³Á¤,»ó,W-46,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,È­¸é º¸È£±â ¼³Á¤,ÇÏ,W-47,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,·Î±×¿ÂÇÏÁö ¾Ê°í ½Ã½ºÅÛ Á¾·á Çã¿ë,»ó,W-48,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,¿ø°Ý ½Ã½ºÅÛ¿¡¼­ °­Á¦·Î ½Ã½ºÅÛ Á¾·á,»ó,W-49,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,º¸¾È °¨»ç¸¦ ·Î±× ÇÒ ¼ö ¾ø´Â °æ¿ì Áï½Ã ½Ã½ºÅÛ Á¾·á,»ó,W-50,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,SAM °èÁ¤°ú °øÀ¯ÀÇ ÀÍ¸í ¿­°Å Çã¿ë ¾È ÇÔ,»ó,W-51,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,Autologon ±â´É Á¦¾î,»ó,W-52,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,ÀÌµ¿½Ä ¹Ìµð¾î Æ÷¸Ë ¹× ²¨³»±â Çã¿ë,»ó,W-53,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,Dos °ø°Ý ¹æ¾î ·¹Áö½ºÆ®¸® ¼³Á¤,Áß,W-54,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,»ç¿ëÀÚ°¡ ÇÁ¸°ÅÍ µå¶óÀÌ¹ö¸¦ ¼³Ä¡ÇÒ ¼ö ¾ø°Ô ÇÔ,Áß,W-55,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,SMB ¼¼¼Ç Áß´Ü °ü¸® ¼³Á¤,Áß,W-56,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,·Î±×¿Â ½Ã °æ°í ¸Þ½ÃÁö ¼³Á¤,ÇÏ,W-57,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,»ç¿ëÀÚº° È¨ µð·ºÅÍ¸® ±ÇÇÑ ¼³Á¤,Áß,W-58,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,LAN Manager ÀÎÁõ ¼öÁØ,Áß,W-59,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,º¸¾È Ã¤³Î µ¥ÀÌÅÍ µðÁöÅÐ ¾ÏÈ£È­ ¶Ç´Â ¼­¸í,Áß,W-60,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,ÆÄÀÏ ¹× µð·ºÅä¸® º¸È£,Áß,W-61,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,½ÃÀÛ ÇÁ·Î±×·¥ ¸ñ·Ï ºÐ¼®,Áß,W-62,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,µµ¸ÞÀÎ ÄÁÆ®·Ñ·¯-»ç¿ëÀÚÀÇ ½Ã°£ µ¿±âÈ­,Áß,W-63,Y,¾çÈ£,,-
-II. Windows ¼­¹ö,05. º¸¾È°ü¸®,À©µµ¿ì ¹æÈ­º® ¼³Á¤,Áß,W-64,Y,¾çÈ£,,-
+ï»¿ëŒ€ë¶„ë¥˜,ì¤‘ë¶„ë¥˜,ì ê²€í•­ëª©,ì¤‘ìš”ë„,í•­ëª©ì½”ë“œ,ì ê²€ì—¬ë¶€,ì ê²€ê²°ê³¼,ë¹„ê³ /ì½”ë©˜íŠ¸,ê²°ê³¼ë¤í”„
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,Administrator ê³„ì • ì´ë¦„ ë³€ê²½ ë“± ë³´ì•ˆì„± ê°•í™”,ìƒ,W-01,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,Guest ê³„ì • ë¹„í™œì„±í™”,ìƒ,W-02,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ë¶ˆí•„ìš”í•œ ê³„ì • ì œê±°,ìƒ,W-03,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ê³„ì • ìž ê¸ˆ ìž„ê³„ê°’ ì„¤ì •,ìƒ,W-04,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,í•´ë… ê°€ëŠ¥í•œ ì•”í˜¸í™”ë¥¼ ì‚¬ìš©í•˜ì—¬ ì•”í˜¸ ì €ìž¥ í•´ì œ,ìƒ,W-05,N,-,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ê´€ë¦¬ìž ê·¸ë£¹ì— ìµœì†Œí•œì˜ ì‚¬ìš©ìž í¬í•¨,ìƒ,W-06,N,-,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,Everyone ì‚¬ìš© ê¶Œí•œì„ ìµëª… ì‚¬ìš©ìžì— ì ìš©,ì¤‘,W-07,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ê³„ì • ìž ê¸ˆ ê¸°ê°„ ì„¤ì •,ì¤‘,W-08,Y,ë¯¸í¡,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ë¹„ë°€ë²ˆí˜¸ ê´€ë¦¬ ì •ì±… ì„¤ì •,ìƒ,W-09,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ë§ˆì§€ë§‰ ì‚¬ìš©ìž ì´ë¦„ í‘œì‹œ ì•ˆ í•¨,ì¤‘,W-10,Y,ë¯¸í¡,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ë¡œì»¬ ë¡œê·¸ì˜¨ í—ˆìš©,ì¤‘,W-11,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ìµëª… SID/ì´ë¦„ ë³€í™˜ í—ˆìš© í•´ì œ,ì¤‘,W-12,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ì½˜ì†” ë¡œê·¸ì˜¨ ì‹œ ë¡œì»¬ ê³„ì •ì—ì„œ ë¹ˆ ì•”í˜¸ ì‚¬ìš© ì œí•œ,ì¤‘,W-13,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,01. ê³„ì •ê´€ë¦¬,ì›ê²©í„°ë¯¸ë„ ì ‘ì† ê°€ëŠ¥í•œ ì‚¬ìš©ìž ê·¸ë£¹ ì œí•œ,ì¤‘,W-14,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ì‚¬ìš©ìž ê°œì¸í‚¤ ì‚¬ìš© ì‹œ ì•”í˜¸ ìž…ë ¥,ìƒ,W-15,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ê³µìœ  ê¶Œí•œ ë° ì‚¬ìš©ìž ê·¸ë£¹ ì„¤ì •,ìƒ,W-16,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,í•˜ë“œë””ìŠ¤í¬ ê¸°ë³¸ ê³µìœ  ì œê±°,ìƒ,W-17,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ë¶ˆí•„ìš”í•œ ì„œë¹„ìŠ¤ ì œê±°,ìƒ,W-18,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ë¶ˆí•„ìš”í•œ IIS ì„œë¹„ìŠ¤ êµ¬ë™ ì ê²€,ìƒ,W-19,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,NetBIOS ë°”ì¸ë”© ì„œë¹„ìŠ¤ êµ¬ë™ ì ê²€,ìƒ,W-20,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ì•”í˜¸í™”ë˜ì§€ ì•ŠëŠ” FTP ì„œë¹„ìŠ¤ ë¹„í™œì„±í™”,ìƒ,W-21,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,FTP ë””ë ‰í† ë¦¬ ì ‘ê·¼ê¶Œí•œ ì„¤ì •,ìƒ,W-22,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ê³µìœ  ì„œë¹„ìŠ¤ì— ëŒ€í•œ ìµëª… ì ‘ê·¼ ì œí•œ ì„¤ì •,ìƒ,W-23,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,FTP ì ‘ê·¼ ì œì–´ ì„¤ì •,ìƒ,W-24,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,DNS Zone Transfer ì„¤ì •,ìƒ,W-25,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,RDS(Remote Data Services)ì œê±°,ìƒ,W-26,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ìµœì‹  Windows OS Build ë²„ì „ ì ìš©,ìƒ,W-27,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,í„°ë¯¸ë„ ì„œë¹„ìŠ¤ ì•”í˜¸í™” ìˆ˜ì¤€ ì„¤ì •,ì¤‘,W-28,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ë¶ˆí•„ìš”í•œ SNMP ì„œë¹„ìŠ¤ êµ¬ë™ ì ê²€,ì¤‘,W-29,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,SNMP Community String ë³µìž¡ì„± ì„¤ì •,ì¤‘,W-30,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,SNMP Access Control ì„¤ì •,ì¤‘,W-31,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,DNS ì„œë¹„ìŠ¤ êµ¬ë™ ì ê²€,ì¤‘,W-32,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,HTTP/FTP/SMTP ë°°ë„ˆ ì°¨ë‹¨,í•˜,W-33,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,Telnet ì„œë¹„ìŠ¤ ë¹„í™œì„±í™”,ì¤‘,W-34,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ë¶ˆí•„ìš”í•œ ODBC/OLE-DB ë°ì´í„° ì†ŒìŠ¤ì™€ ë“œë¼ì´ë¸Œ ì œê±°,ì¤‘,W-35,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ì›ê²©í„°ë¯¸ë„ ì ‘ì† íƒ€ìž„ì•„ì›ƒ ì„¤ì •,ì¤‘,W-36,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,02. ì„œë¹„ìŠ¤ê´€ë¦¬,ì˜ˆì•½ëœ ìž‘ì—…ì— ì˜ì‹¬ìŠ¤ëŸ¬ìš´ ëª…ë ¹ì´ ë“±ë¡ë˜ì–´ ìžˆëŠ”ì§€ ì ê²€,ì¤‘,W-37,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,03. íŒ¨ì¹˜ê´€ë¦¬,ì£¼ê¸°ì  ë³´ì•ˆ íŒ¨ì¹˜ ë° ë²¤ë” ê¶Œê³ ì‚¬í•­ ì ìš©,ìƒ,W-38,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,03. íŒ¨ì¹˜ê´€ë¦¬,ë°±ì‹  í”„ë¡œê·¸ëž¨ ì—…ë°ì´íŠ¸,ìƒ,W-39,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,04. ë¡œê·¸ê´€ë¦¬,ì •ì±…ì— ë”°ë¥¸ ì‹œìŠ¤í…œ ë¡œê¹… ì„¤ì •,ì¤‘,W-40,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,04. ë¡œê·¸ê´€ë¦¬,NTP ë° ì‹œê° ë™ê¸°í™” ì„¤ì •,ì¤‘,W-41,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,04. ë¡œê·¸ê´€ë¦¬,ì´ë²¤íŠ¸ ë¡œê·¸ ê´€ë¦¬ ì„¤ì •,í•˜,W-42,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,04. ë¡œê·¸ê´€ë¦¬,ì´ë²¤íŠ¸ ë¡œê·¸ íŒŒì¼ ì ‘ê·¼ í†µì œ ì„¤ì •,ì¤‘,W-43,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì›ê²©ìœ¼ë¡œ ì•¡ì„¸ìŠ¤í•  ìˆ˜ ìžˆëŠ” ë ˆì§€ìŠ¤íŠ¸ë¦¬ ê²½ë¡œ,ìƒ,W-44,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë°±ì‹  í”„ë¡œê·¸ëž¨ ì„¤ì¹˜,ìƒ,W-45,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,SAM íŒŒì¼ ì ‘ê·¼ í†µì œ ì„¤ì •,ìƒ,W-46,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,í™”ë©´ ë³´í˜¸ê¸° ì„¤ì •,í•˜,W-47,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë¡œê·¸ì˜¨í•˜ì§€ ì•Šê³  ì‹œìŠ¤í…œ ì¢…ë£Œ í—ˆìš©,ìƒ,W-48,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì›ê²© ì‹œìŠ¤í…œì—ì„œ ê°•ì œë¡œ ì‹œìŠ¤í…œ ì¢…ë£Œ,ìƒ,W-49,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë³´ì•ˆ ê°ì‚¬ë¥¼ ë¡œê·¸ í•  ìˆ˜ ì—†ëŠ” ê²½ìš° ì¦‰ì‹œ ì‹œìŠ¤í…œ ì¢…ë£Œ,ìƒ,W-50,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,SAM ê³„ì •ê³¼ ê³µìœ ì˜ ìµëª… ì—´ê±° í—ˆìš© ì•ˆ í•¨,ìƒ,W-51,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,Autologon ê¸°ëŠ¥ ì œì–´,ìƒ,W-52,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì´ë™ì‹ ë¯¸ë””ì–´ í¬ë§· ë° êº¼ë‚´ê¸° í—ˆìš©,ìƒ,W-53,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,Dos ê³µê²© ë°©ì–´ ë ˆì§€ìŠ¤íŠ¸ë¦¬ ì„¤ì •,ì¤‘,W-54,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì‚¬ìš©ìžê°€ í”„ë¦°í„° ë“œë¼ì´ë²„ë¥¼ ì„¤ì¹˜í•  ìˆ˜ ì—†ê²Œ í•¨,ì¤‘,W-55,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,SMB ì„¸ì…˜ ì¤‘ë‹¨ ê´€ë¦¬ ì„¤ì •,ì¤‘,W-56,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë¡œê·¸ì˜¨ ì‹œ ê²½ê³  ë©”ì‹œì§€ ì„¤ì •,í•˜,W-57,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì‚¬ìš©ìžë³„ í™ˆ ë””ë ‰í„°ë¦¬ ê¶Œí•œ ì„¤ì •,ì¤‘,W-58,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,LAN Manager ì¸ì¦ ìˆ˜ì¤€,ì¤‘,W-59,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë³´ì•ˆ ì±„ë„ ë°ì´í„° ë””ì§€í„¸ ì•”í˜¸í™” ë˜ëŠ” ì„œëª…,ì¤‘,W-60,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,íŒŒì¼ ë° ë””ë ‰í† ë¦¬ ë³´í˜¸,ì¤‘,W-61,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ì‹œìž‘ í”„ë¡œê·¸ëž¨ ëª©ë¡ ë¶„ì„,ì¤‘,W-62,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ë„ë©”ì¸ ì»¨íŠ¸ë¡¤ëŸ¬-ì‚¬ìš©ìžì˜ ì‹œê°„ ë™ê¸°í™”,ì¤‘,W-63,Y,ì–‘í˜¸,,-
+II. Windows ì„œë²„,05. ë³´ì•ˆê´€ë¦¬,ìœˆë„ìš° ë°©í™”ë²½ ì„¤ì •,ì¤‘,W-64,Y,ì–‘í˜¸,,-
