@@ -9,16 +9,25 @@ const RESULT_FILES = [
 const STATUS_COLOR = {
   "양호": "var(--good)",
   "미흡": "var(--bad)",
-  "수동점검": "var(--warn)",
-  "-": "var(--neutral)",
+  "수동": "var(--warn)",
+  "NA": "var(--neutral)",
 };
 
 const STATUS_BADGE = {
   "양호": "good",
   "미흡": "bad",
-  "수동점검": "warn",
-  "-": "neutral",
+  "수동": "warn",
+  "NA": "neutral",
 };
+
+const STATUS_SET = new Set(["양호", "미흡", "수동", "NA"]);
+
+function normalizeStatus(value) {
+  const text = (value ?? "").toString().trim();
+  if (!text || text === "-" || text === "N/A") return "NA";
+  if (text === "수동점검") return "수동";
+  return STATUS_SET.has(text) ? text : "NA";
+}
 
 const STATE = {
   guide: [],
@@ -109,8 +118,9 @@ function setView(view) {
 }
 
 function badge(status) {
-  const cls = STATUS_BADGE[status] || "neutral";
-  return `<span class="badge ${cls}">${status}</span>`;
+  const normalized = normalizeStatus(status);
+  const cls = STATUS_BADGE[normalized] || "neutral";
+  return `<span class="badge ${cls}">${normalized}</span>`;
 }
 
 function formatText(value) {
@@ -216,13 +226,13 @@ function renderDashboard() {
     return;
   }
 
-  const counts = { "미흡": 0, "양호": 0, "수동점검": 0, "-": 0 };
+  const counts = { "미흡": 0, "양호": 0, "수동": 0, "NA": 0 };
   const weakness = new Map();
   let totalItems = 0;
 
   projects.forEach((project) => {
     project.items.forEach((item) => {
-      const status = item["점검결과"] || "-";
+      const status = normalizeStatus(item["점검결과"]);
       counts[status] = (counts[status] || 0) + 1;
       totalItems += 1;
       if (status === "미흡") {
@@ -265,13 +275,13 @@ function renderDashboard() {
   const recent = document.getElementById("recentTable");
   recent.innerHTML = "";
   projects.forEach((project) => {
-    const counts = { "미흡": 0, "양호": 0, "수동점검": 0, "-": 0 };
+    const counts = { "미흡": 0, "양호": 0, "수동": 0, "NA": 0 };
     project.items.forEach((item) => {
-      const status = item["점검결과"] || "-";
+      const status = normalizeStatus(item["점검결과"]);
       counts[status] = (counts[status] || 0) + 1;
     });
     const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-    const order = ["양호", "미흡", "수동점검", "-"];
+    const order = ["양호", "미흡", "수동", "NA"];
     const segments = order
       .map((status) => ({
         status,
@@ -309,6 +319,7 @@ function renderProjectSelect() {
     opt.textContent = "Result CSV 업로드 필요";
     select.appendChild(opt);
     select.disabled = true;
+    select.title = opt.textContent;
     return;
   }
 
@@ -320,6 +331,8 @@ function renderProjectSelect() {
     if (idx === 0) opt.selected = true;
     select.appendChild(opt);
   });
+  const selected = select.options[select.selectedIndex];
+  select.title = selected ? selected.textContent : "";
 }
 
 function setCurrentProject(project) {
@@ -350,9 +363,14 @@ function renderChecklist() {
   const search = document.getElementById("searchInput").value.toLowerCase();
   const list = document.getElementById("checklist");
   list.innerHTML = "";
+  const maxStatusLen = Math.max(
+    2,
+    ...project.items.map((item) => normalizeStatus(item["점검결과"]).length)
+  );
+  list.style.setProperty("--status-badge-ch", String(maxStatusLen));
 
   const filtered = project.items.filter((item) => {
-    const status = item["점검결과"] || "-";
+    const status = normalizeStatus(item["점검결과"]);
     if (statusFilter !== "all" && status !== statusFilter) return false;
     if (search) {
       const target = `${item["점검항목"]} ${item["항목코드"]} ${item["중분류"]}`.toLowerCase();
@@ -364,7 +382,7 @@ function renderChecklist() {
   document.getElementById("listMeta").textContent = `${filtered.length} / ${project.items.length} 항목 표시`;
 
   filtered.forEach((item, idx) => {
-    const status = item["점검결과"] || "-";
+    const status = normalizeStatus(item["점검결과"]);
     const guide = item.guide || {};
     const el = document.createElement("div");
     el.className = "check-item";
@@ -420,7 +438,7 @@ function renderDetail() {
   const itemTitle = item["점검항목"] || guide["점검항목"] || "-";
   const code = item["항목코드"] || guide["항목코드"] || "-";
   const importance = item["중요도"] || guide["중요도"] || "-";
-  const status = item["점검결과"] || "-";
+  const status = normalizeStatus(item["점검결과"]);
   const category = [guide["대분류"] || item["대분류"], guide["중분류"] || item["중분류"]]
     .filter(Boolean)
     .join(" / ");
@@ -621,6 +639,8 @@ async function init() {
     const project = STATE.projects.find((p) => p.id === projectSelect.value);
     setCurrentProject(project);
     if (project) setView("project");
+    const selected = projectSelect.options[projectSelect.selectedIndex];
+    projectSelect.title = selected ? selected.textContent : "";
   });
 
   const resultInput = document.getElementById("resultFiles");
