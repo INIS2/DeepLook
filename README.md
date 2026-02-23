@@ -1,4 +1,4 @@
-﻿# MegaLook-CIIP_Guide_Result_Dashboard
+﻿# MegaLook-CIIP_Dashboard
 
 CIIP 점검 스크립트 결과를 한눈에 보기 위한 대시보드 프로젝트입니다. MegaLook 기반 점검 결과(CSV)를 수집하고, 항목별 준수 여부와 요약 지표를 시각화하는 것을 목표로 합니다.
 
