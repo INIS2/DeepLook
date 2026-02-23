@@ -1,2 +1,8 @@
 Reference/
 .DS_Store
+tools/
+Result/*.csv
+!Result/(260101)HP_DEV_Cent7.csv
+!Result/(260102)HP_Windows.csv
+!Result/(260103)HP_Window.csv
+!Result/(260104)HP_Windows.csv

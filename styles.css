@@ -139,7 +139,7 @@ body {
   display: flex;
   gap: 16px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .segmented {
@@ -162,6 +162,8 @@ body {
   font-weight: 600;
   height: 100%;
   line-height: 64px;
+  flex: 1 1 0;
+  text-align: center;
 }
 
 .seg-btn.active {
@@ -175,6 +177,14 @@ body {
   gap: 6px;
   font-size: 12px;
   color: var(--muted);
+}
+
+.select-wrap select {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .upload-wrap {
@@ -503,6 +513,7 @@ input::placeholder {
   gap: 10px;
   max-height: 260px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 6px;
 }
 
@@ -514,6 +525,8 @@ input::placeholder {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
   gap: 12px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .recent-row {
@@ -526,10 +539,15 @@ input::placeholder {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .table-title {
   font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .recent-bar {
@@ -647,9 +665,11 @@ input::placeholder {
   display: grid;
   gap: 8px;
   overflow: auto;
+  overflow-x: hidden;
   padding-right: 6px;
   flex: 1;
   min-height: 0;
+  --status-badge-ch: 2;
 }
 
 .list-header {
@@ -770,6 +790,8 @@ input::placeholder {
 }
 
 .check-row.single-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 10px;
 }
 
@@ -789,6 +811,14 @@ input::placeholder {
   flex: 0 0 auto;
 }
 
+.checklist .check-item .check-right .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--status-badge-ch) * 1ch + 16px);
+  text-align: center;
+}
+
 .check-code {
   font-size: 11px;
   font-weight: 700;
@@ -804,6 +834,8 @@ input::placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  display: block;
 }
 
 .check-title {
@@ -813,6 +845,7 @@ input::placeholder {
 .check-meta {
   color: var(--muted);
   font-size: 12px;
+  flex: 0 0 auto;
 }
 
 .importance-pill {
@@ -1074,8 +1107,24 @@ input::placeholder {
   }
 
   .actions {
-    flex-direction: column;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .actions .segmented {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .actions .field-grid {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1101px) {
+  .actions .segmented {
+    min-width: 260px;
   }
 }
 
