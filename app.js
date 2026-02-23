@@ -1,4 +1,4 @@
-const GUIDE_PATH = "Content/CIIP Checklist.csv";
+﻿const GUIDE_PATH = "Content/CIIP Checklist.csv";
 const RESULT_FILES = [
   { id: "(260101)HP_DEV_Cent7.csv", label: "260101 HP_DEV_Cent7" },
   { id: "(260102)HP_Windows.csv", label: "260102 HP_Windows" },
@@ -113,6 +113,39 @@ function badge(status) {
   return `<span class="badge ${cls}">${status}</span>`;
 }
 
+function formatText(value) {
+  if (value === undefined || value === null) return "-";
+  const text = String(value).trim();
+  if (!text) return "-";
+  return text.replace(/\r?\n/g, "<br />");
+}
+
+let activeTooltip = null;
+
+function showTooltip(target, x, y) {
+  const tooltip = document.getElementById("tooltip");
+  if (!tooltip) return;
+  tooltip.textContent = target.dataset.tooltip || "";
+  tooltip.classList.add("show");
+  tooltip.style.left = `${x}px`;
+  tooltip.style.top = `${y}px`;
+  activeTooltip = target;
+}
+
+function moveTooltip(x, y) {
+  const tooltip = document.getElementById("tooltip");
+  if (!tooltip || !activeTooltip) return;
+  tooltip.style.left = `${x}px`;
+  tooltip.style.top = `${y}px`;
+}
+
+function hideTooltip() {
+  const tooltip = document.getElementById("tooltip");
+  if (!tooltip) return;
+  tooltip.classList.remove("show");
+  activeTooltip = null;
+}
+
 function renderDonut(counts) {
   const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
   const svg = document.getElementById("statusDonut");
@@ -136,6 +169,8 @@ function renderDonut(counts) {
       `M ${center} ${center} L ${x1} ${y1} A ${radius} ${radius} 0 ${large} 1 ${x2} ${y2} Z`
     );
     path.setAttribute("fill", STATUS_COLOR[status] || "#999");
+    path.classList.add("donut-slice");
+    path.dataset.tooltip = `${status}: ${value}건`;
     svg.appendChild(path);
     start += angle;
   });
@@ -230,14 +265,36 @@ function renderDashboard() {
   const recent = document.getElementById("recentTable");
   recent.innerHTML = "";
   projects.forEach((project) => {
+    const counts = { "미흡": 0, "양호": 0, "수동점검": 0, "-": 0 };
+    project.items.forEach((item) => {
+      const status = item["점검결과"] || "-";
+      counts[status] = (counts[status] || 0) + 1;
+    });
+    const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
+    const order = ["양호", "미흡", "수동점검", "-"];
+    const segments = order
+      .map((status) => ({
+        status,
+        value: counts[status] || 0,
+        pct: Math.max(0, ((counts[status] || 0) / total) * 100),
+      }))
+      .filter((seg) => seg.value > 0);
+    const segmentHtml = segments
+      .map(
+        (seg) =>
+          `<span class="bar-seg" style="width:${seg.pct}%; background:${STATUS_COLOR[seg.status] || "#999"}" data-tooltip="${seg.status}: ${seg.value}건"></span>`
+      )
+      .join("");
     const row = document.createElement("div");
-    row.className = "table-row";
+    row.className = "table-row recent-row";
     row.innerHTML = `
-      <div>
+      <div class="recent-head">
         <div class="table-title">${project.label}</div>
         <div class="check-meta">${project.items.length} 항목</div>
       </div>
-      ${badge(project.summary.main)}
+      <div class="recent-bar" aria-label="상태 분포">
+        ${segmentHtml || `<span class="bar-seg" style="width:100%; background: var(--line)"></span>`}
+      </div>
     `;
     recent.appendChild(row);
   });
@@ -311,14 +368,21 @@ function renderChecklist() {
     const guide = item.guide || {};
     const el = document.createElement("div");
     el.className = "check-item";
+    const code = item["항목코드"] || "-";
+    const importance = item["중요도"] || guide["중요도"] || "-";
+    const importanceLabel = importance.replace(/[^가-힣]/g, "") || "-";
+    const importanceClass =
+      importanceLabel === "상" ? "high" : importanceLabel === "중" ? "mid" : "low";
     el.innerHTML = `
-      <div class="check-row">
-        <div class="check-title">${item["점검항목"]}</div>
-        ${badge(status)}
-      </div>
-      <div class="check-row">
-        <div class="check-meta">${item["중분류"]} · ${item["항목코드"]}</div>
-        <div class="check-meta">중요도 ${item["중요도"] || guide["중요도"] || "-"}</div>
+      <div class="check-row single-line">
+        <div class="check-left">
+          <span class="check-code">${code}</span>
+          <span class="check-title">${item["점검항목"]}</span>
+        </div>
+        <div class="check-right">
+          <span class="importance-pill ${importanceClass}">${importanceLabel}</span>
+          ${badge(status)}
+        </div>
       </div>
     `;
     el.addEventListener("click", () => {
@@ -342,106 +406,139 @@ function renderDetail() {
   const body = document.getElementById("detailBody");
   const title = document.getElementById("detailTitle");
   const badges = document.getElementById("detailBadges");
+  const meta = document.getElementById("detailMeta");
 
   if (!item) {
     title.textContent = "항목을 선택하세요";
     body.innerHTML = "";
     badges.innerHTML = "";
+    meta.innerHTML = "";
     return;
   }
 
   const guide = item.guide || {};
-  title.textContent = item["점검항목"];
+  const itemTitle = item["점검항목"] || guide["점검항목"] || "-";
+  const code = item["항목코드"] || guide["항목코드"] || "-";
+  const importance = item["중요도"] || guide["중요도"] || "-";
+  const status = item["점검결과"] || "-";
+  const category = [guide["대분류"] || item["대분류"], guide["중분류"] || item["중분류"]]
+    .filter(Boolean)
+    .join(" / ");
+  const page = guide["페이지"] || "-";
+
+  title.textContent = itemTitle;
   badges.innerHTML = `
-    ${badge(item["점검결과"] || "-")}
-    ${badge(item["중요도"] || guide["중요도"] || "-")}
-    <span class="badge neutral">${item["항목코드"]}</span>
+    ${badge(status)}
+    ${badge(importance)}
+    <span class="badge neutral">${code}</span>
   `;
 
-  if (STATE.currentTab === "overview") {
-    body.innerHTML = `
-      <div class="detail-block">
-        <h4>점검 내용</h4>
-        <p>${guide["점검 내용"] || "-"}</p>
-      </div>
-      <div class="detail-block">
-        <h4>점검 목적</h4>
-        <p>${guide["점검 목적"] || "-"}</p>
-      </div>
-      <div class="detail-block">
-        <h4>보안 위협</h4>
-        <p>${guide["보안 위협"] || "-"}</p>
-      </div>
-    `;
-  }
+  meta.innerHTML = `
+    <div class="meta-item"><span class="meta-label">분류</span><span class="meta-value">${category || "-"}</span></div>
+    <div class="meta-item"><span class="meta-label">페이지</span><span class="meta-value">${page}</span></div>
+  `;
 
-  if (STATE.currentTab === "criteria") {
-    body.innerHTML = `
-      <div class="detail-block">
-        <h4>양호 판단</h4>
-        <p>${guide["양호판단"] || "-"}</p>
-      </div>
-      <div class="detail-block">
-        <h4>취약 판단</h4>
-        <p>${guide["취약판단"] || "-"}</p>
-      </div>
-      <div class="detail-block">
-        <h4>대상</h4>
-        <p>${guide["대상"] || "-"}</p>
-      </div>
-    `;
-  }
-
-  if (STATE.currentTab === "action") {
-    const steps = [];
-    for (let i = 1; i <= 5; i += 1) {
-      const title = guide[`점검조치 ${i} 제목`];
-      const content = guide[`점검조치 ${i} 내용`];
-      if (title || content) {
-        steps.push({ title, content });
-      }
+  const steps = [];
+  for (let i = 1; i <= 5; i += 1) {
+    const stepTitle = guide[`점검조치 ${i} 제목`];
+    const stepContent = guide[`점검조치 ${i} 내용`];
+    if (stepTitle || stepContent) {
+      steps.push({ title: stepTitle, content: stepContent });
     }
+  }
 
-    body.innerHTML = `
-      <div class="detail-block">
-        <h4>조치 방법</h4>
-        <p>${guide["조치방법"] || "-"}</p>
+  const stepsHtml = steps.length
+    ? `<ol class="sheet-steps">
+        ${steps
+          .map(
+            (step, idx) => `
+            <li>
+              <strong>Step ${idx + 1})${step.title ? ` ${step.title}` : ""}</strong><br />
+              ${formatText(step.content)}
+            </li>
+          `
+          )
+          .join("")}
+      </ol>`
+    : `<div class="sheet-empty">-</div>`;
+
+  body.innerHTML = `
+    <div class="detail-sheet">
+      <div class="sheet-head">
+        <div class="sheet-code">
+          <div class="code-main">${code}</div>
+          <div class="code-sub">${importance}</div>
+        </div>
+        <div class="sheet-title">
+          <div class="sheet-category">${category || "-"}</div>
+          <div class="sheet-name">${itemTitle}</div>
+        </div>
       </div>
-      <div class="detail-block">
-        <h4>조치 시 영향</h4>
-        <p>${guide["조치 시 영향"] || "-"}</p>
+
+      <div class="sheet-section">개요</div>
+      <div class="sheet-row">
+        <div class="sheet-label">점검 내용</div>
+        <div class="sheet-value">${formatText(guide["점검 내용"])}</div>
       </div>
-      ${steps
-        .map(
-          (step, idx) => `
-          <div class="detail-block">
-            <h4>점검조치 ${idx + 1} ${step.title || ""}</h4>
-            <p>${step.content || "-"}</p>
+      <div class="sheet-row">
+        <div class="sheet-label">점검 목적</div>
+        <div class="sheet-value">${formatText(guide["점검 목적"])}</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-label">보안 위협</div>
+        <div class="sheet-value">${formatText(guide["보안 위협"])}</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-label">참고</div>
+        <div class="sheet-value">${formatText(guide["참고"])}</div>
+      </div>
+
+      <div class="sheet-section">점검 대상 및 판단 기준</div>
+      <div class="sheet-row">
+        <div class="sheet-label">대상</div>
+        <div class="sheet-value">${formatText(guide["대상"])}</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-label">판단 기준</div>
+        <div class="sheet-value">
+          <div class="criteria-list">
+            <div class="criteria-item">
+              <span class="criteria-tag good">양호</span>
+              <span>${formatText(guide["양호판단"])}</span>
+            </div>
+            <div class="criteria-item">
+              <span class="criteria-tag bad">취약</span>
+              <span>${formatText(guide["취약판단"])}</span>
+            </div>
           </div>
-        `
-        )
-        .join("")}
-    `;
-  }
+        </div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-label">조치 방법</div>
+        <div class="sheet-value">${formatText(guide["조치방법"])}</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-label">조치 시 영향</div>
+        <div class="sheet-value">${formatText(guide["조치 시 영향"])}</div>
+      </div>
 
-  if (STATE.currentTab === "reference") {
-    body.innerHTML = `
-      <div class="detail-block">
-        <h4>참고</h4>
-        <p>${guide["참고"] || "-"}</p>
+      <div class="sheet-section">점검 결과 참고</div>
+      <div class="sheet-row">
+        <div class="sheet-label">비고/코멘트</div>
+        <div class="sheet-value">${formatText(item["비고/코멘트"])}</div>
       </div>
-      <div class="detail-block">
-        <h4>비고/코멘트</h4>
-        <p>${item["비고/코멘트"] || "-"}</p>
+      <div class="sheet-row">
+        <div class="sheet-label">결과 덤프</div>
+        <div class="sheet-value">${formatText(item["결과덤프"])}</div>
       </div>
-      <div class="detail-block">
-        <h4>결과 덤프</h4>
-        <p>${item["결과덤프"] || "-"}</p>
+
+      <div class="sheet-cases">
+        <div class="sheet-cases-title">점검 및 조치 사례</div>
+        ${stepsHtml}
       </div>
-    `;
-  }
+    </div>
+  `;
 }
-
 function wireTabs() {
   document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -502,6 +599,23 @@ async function init() {
   renderProjectSelect();
   renderDashboard();
 
+  document.addEventListener("mouseover", (e) => {
+    const target = e.target.closest("[data-tooltip]");
+    if (!target) return;
+    showTooltip(target, e.clientX, e.clientY - 12);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!activeTooltip) return;
+    moveTooltip(e.clientX, e.clientY - 12);
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    if (!activeTooltip) return;
+    if (activeTooltip.contains(e.relatedTarget)) return;
+    if (e.target === activeTooltip) hideTooltip();
+  });
+
   const projectSelect = document.getElementById("projectSelect");
   projectSelect.addEventListener("change", () => {
     const project = STATE.projects.find((p) => p.id === projectSelect.value);
@@ -517,3 +631,4 @@ async function init() {
 }
 
 init();
+

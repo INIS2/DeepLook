@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -16,10 +16,10 @@
   <div class="app">
     <header class="topbar">
       <div class="brand">
-        <div class="brand-badge">CIIP</div>
+        <div class="brand-badge">MEGA<br />LOOK</div>
         <div class="brand-title">
-          <div class="title">취약점 점검 결과 뷰어</div>
-          <div class="subtitle">Content + Result 연결형 대시보드</div>
+          <div class="title">2026 ROK CIIP Checklist Result Dashboard</div>
+          <div class="subtitle">Content + Result linkage viewer</div>
         </div>
       </div>
 
@@ -28,17 +28,22 @@
           <button class="seg-btn active" data-view="dashboard">대시보드</button>
           <button class="seg-btn" data-view="project">프로젝트</button>
         </div>
-        <div class="upload-wrap">
-          <label for="resultFiles">Result 폴더</label>
-          <input id="resultFiles" type="file" accept=".csv" multiple webkitdirectory />
-        </div>
-        <div class="info-tip" aria-label="안내" tabindex="0">
-          <span class="info-icon">i</span>
-          <div class="info-panel">데이터는 브라우저에서만 사용되며 서버로 전송되지 않습니다.</div>
-        </div>
-        <div class="select-wrap">
-          <label for="projectSelect">프로젝트</label>
-          <select id="projectSelect"></select>
+        <div class="field-grid">
+          <div class="field-head">Result 업로드</div>
+          <div class="field-head">프로젝트</div>
+          <div class="field-cell">
+            <div class="upload-wrap">
+              <label for="resultFiles"></label>
+              <input id="resultFiles" type="file" accept=".csv" multiple webkitdirectory />
+            </div>
+            <div class="info-tip" aria-label="안내" tabindex="0">
+              <span class="info-icon">i</span>
+              <div class="info-panel">데이터는 브라우저에서만 사용되며 서버로 전송되지 않습니다.</div>
+            </div>
+          </div>
+          <div class="field-cell select-wrap">
+            <select id="projectSelect"></select>
+          </div>
         </div>
       </div>
     </header>
@@ -81,12 +86,12 @@
             <div class="legend" id="statusLegend"></div>
           </div>
           <div class="panel">
-            <div class="panel-title">미흡 Top 5</div>
-            <div class="bar-list" id="topWeakList"></div>
-          </div>
-          <div class="panel">
             <div class="panel-title">최근 결과 요약</div>
             <div class="table" id="recentTable"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">미흡 Top 5</div>
+            <div class="bar-list" id="topWeakList"></div>
           </div>
         </div>
       </section>
@@ -119,6 +124,16 @@
               <div class="list-title">점검 체크리스트</div>
               <div class="list-meta" id="listMeta">-</div>
             </div>
+            <div class="list-header">
+              <div class="list-left">
+                <span class="list-col code">코드</span>
+                <span class="list-col title">상세</span>
+              </div>
+              <div class="list-right">
+                <span class="list-col importance">중요도</span>
+                <span class="list-col result">결과</span>
+              </div>
+            </div>
             <div class="checklist" id="checklist"></div>
           </div>
 
@@ -127,14 +142,7 @@
               <div class="detail-title" id="detailTitle">항목을 선택하세요</div>
               <div class="detail-badges" id="detailBadges"></div>
             </div>
-
-            <div class="detail-tabs">
-              <button class="tab-btn active" data-tab="overview">개요</button>
-              <button class="tab-btn" data-tab="criteria">판단</button>
-              <button class="tab-btn" data-tab="action">조치</button>
-              <button class="tab-btn" data-tab="reference">참고</button>
-            </div>
-
+            <div class="detail-meta" id="detailMeta"></div>
             <div class="detail-body" id="detailBody"></div>
           </div>
         </div>
@@ -142,11 +150,12 @@
     </main>
 
     <footer class="footer">
-      <div>Data: Content/CIIP Checklist.csv + Result/*.csv</div>
       <div class="footnote">로컬에서 열 때 데이터가 안 보이면 `python3 -m http.server`로 실행하세요.</div>
     </footer>
   </div>
 
+  <div class="tooltip" id="tooltip" role="tooltip"></div>
   <script src="app.js"></script>
 </body>
 </html>
+
