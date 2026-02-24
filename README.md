@@ -1,6 +1,6 @@
-﻿# MegaLook
+﻿# DeepLook
 
-CIIP 점검 스크립트 결과를 한눈에 보기 위한 대시보드 프로젝트입니다. MegaLook 기반 점검 결과(CSV)를 수집하고, 항목별 준수 여부와 요약 지표를 시각화하는 것을 목표로 합니다.
+CIIP 점검 스크립트 결과를 한눈에 보기 위한 대시보드 프로젝트입니다. DeepLook 기반 점검 결과(CSV)를 수집하고, 항목별 준수 여부와 요약 지표를 시각화하는 것을 목표로 합니다.
 
 ## Goals
 - 점검 결과를 표/요약 지표 형태로 빠르게 확인
@@ -15,7 +15,7 @@ CIIP 점검 스크립트 결과를 한눈에 보기 위한 대시보드 프로�
 ## Run
 로컬 서버로 실행해야 `Content`를 정상적으로 읽습니다.
 ```bash
-cd /Users/young/DEV/MegaLook-CIIP_Guide_Result_Dashboard
+cd /Users/young/DEV/DeepLook-CIIP_Guide_Result_Dashboard
 python3 -m http.server 5173
 ```
 브라우저에서 `http://localhost:5173` 접속
@@ -31,7 +31,7 @@ python3 -m http.server 5173
 - `Result` 내 `점검결과` 값은 `-` → `NA`, `수동점검` → `수동`으로 정리합니다.
 
 ## Expected Input
-- MegaLook 점검 결과 CSV (시스템/장비별)
+- DeepLook 점검 결과 CSV (시스템/장비별)
 - CIIP 체크리스트 CSV
 
 ## Output (Planned)
@@ -58,3 +58,4 @@ python3 -m http.server 5173
   - 최근 결과 요약 가로 스크롤 제거 및 제목 말줄임 처리
   - 프로젝트 셀렉트 말줄임/툴팁 지원으로 반응형 개선
   - 1100px 이하에서 상단 actions 영역 줄바꿈 동작 개선
+
